@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترک رفع الیدین - عقلی اور نقلی دلائل کی روشنی میں</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+            line-height: 2;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 850px;
+            margin: 15px auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            border-bottom: 5px solid #ffc107;
+            border-radius: 0 0 12px 12px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header h2 {
+            margin: 10px 0;
+            font-size: 1.4em;
+            color: #ffc107;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.05em;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #1b5e20;
+            border-bottom: 2px solid #1b5e20;
+            padding-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #0277bd;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            color: #d32f2f;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-right: 6px solid #1b5e20;
+        }
+
+        .card h2 {
+            color: #1b5e20;
+            margin-top: 0;
+            font-size: 1.5em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .card h3 {
+            color: #d32f2f;
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+
+        .fatwa {
+            background: #e8f5e9;
+            border-right: 6px solid #2e7d32;
+        }
+
+        footer {
+            text-align: center;
+            background: #263238;
+            color: white;
+            padding: 20px 10px;
+            margin-top: 30px;
+            font-size: 1em;
+            border-radius: 12px 12px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p>یہ رسالہ اچھی طرح پڑھ لینے کے بعد کوئی بھی غیر مقلد بخاری مسلم سے آپ کے سامنے رفع الیدین کی حدیث نہیں پڑھ سکے گا</p>
+            <h1>ترک رفع الیدین</h1>
+            <h2>عقلی اور نقلی دلائل کی روشنی میں</h2>
+            <p><strong>مؤلف:</strong> مولانا مدثر اقبال عطاری مدنی بن منظور حسین</p>
+            <p><strong>مدرس:</strong> جامعۃ المدینہ فیضان امام اعظم سکیم 2، گوجر خان</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <nav>
+            <h3>فہرستِ مضامین</h3>
+            <ul>
+                <li><a href="#intro">1. خطبہ اور تعارف کتاب</a></li>
+                <li><a href="#chap1">2. باب اول: رفع الیدین پر عقلی گفتگو</a></li>
+                <li><a href="#chap2">3. باب دوم: ترک رفع الیدین پر سوالات</a></li>
+                <li><a href="#chap3">4. باب سوم: ترک رفع الیدین کی احادیث</a></li>
+                <li><a href="#chap4">5. باب چہارم: عبد اللہ بن عمر اور رفع الیدین</a></li>
+                <li><a href="#chap5">6. باب پنجم: بخاری شریف اور رفع الیدین</a></li>
+                <li><a href="#fatwa">7. دار الافتاء اہلسنت کا فتویٰ</a></li>
+            </ul>
+        </nav>
+
+        <section id="intro" class="card">
+            <h2>خطبہ کتاب</h2>
+            <p>تمام تعریفیں اس رب کیلئے جس نے سات زمین اور سات آسمان بغیر ستون کے بنائے اور کروڑوں درود ہوں اس ذات پر جو اُس وقت بھی نبی تھے جب حضرت سیدنا آدم علیہ السلام پانی اور مٹی کے درمیان تھے... یہ مختصر رسالہ مسئلہ رفع الیدین پر لکھنے کا شرف حاصل ہوا کیونکہ غیر مقلدین اس مسئلے کو بہت زیادہ اچھالنے کی کوشش کرتے ہیں۔</p>
+        </section>
+
+        <section id="chap1" class="card">
+            <h2>باب اول: رفع الیدین پر عقلی گفتگو</h2>
+            <p><strong>دلیل نمبر 01:</strong> غیر مقلد جب بھی گفتگو کرتے ہیں رفع الیدین پر کرتے ہیں حالانکہ ہمارا ان سے اختلاف نماز شروع کرنے سے پہلے ٹانگیں چوڑی کرنے کا بھی ہے، ہاتھ کہاں باندھنے ہیں اس پر بھی اختلاف ہے۔</p>
+            <p><strong>دلیل نمبر 04:</strong> اسلام میں احادیث کے مطابق پہلے ابتداء میں نماز کے اندر افعال کیے جاتے تھے جیسے جوتے پہننا، باتیں کرنا، آہستہ آہستہ تمام افعال منع ہوتے گئے یہاں تک کہ سجدوں والا رفع الیدین بھی بالاتفاق منع ہو گیا۔</p>
+        </section>
+
+        <section id="chap2" class="card">
+            <h2>باب دوم: ترک رفع الیدین پر سوالات</h2>
+            <p><strong>رفع الیدین کرنے والوں سے ہمارے اہم سوالات:</strong></p>
+            <ul>
+                <li>رسول اللہ ﷺ کی کوئی ایک ضعیف حدیث بھی نہیں ہے جس میں آپ نے رفع الیدین کا حکم دیا ہو۔</li>
+                <li>کوئی ایک حدیث دکھا دیں جس میں لکھا ہو کہ آپ ﷺ نے وفات تک رفع الیدین کیا ہو۔</li>
+                <li>کیا کوئی ایسی حدیث ہے جس میں یہ لکھا ہو کہ رکوع سے پہلے، بعد میں اور تیسری رکعت کے شروع میں رفع الیدین کرنا سنت ہے؟</li>
+            </ul>
+        </section>
+
+        <section id="chap3" class="card">
+            <h2>باب سوم: ترک رفع الیدین کی احادیث</h2>
+            <p><strong>حدیث نمبر 01 (صحیح مسلم):</strong> حضرت جابر بن سمرہ رضی اللہ عنہ سے روایت ہے کہ رسول اللہ ﷺ ہمارے پاس تشریف لائے اور فرمایا: "میں تم کو نماز میں شریر گھوڑوں کی دموں کی طرح رفع الیدین کرتے کیوں دیکھتا ہوں؟ نماز میں سکون سے رہو۔"</p>
+        </section>
+
+        <section id="chap4" class="card">
+            <h2>باب چہارم: عبد اللہ بن عمر اور رفع الیدین</h2>
+            <p>غیر مقلدین اس مسئلے پر سب سے زیادہ حضرت عبد اللہ بن عمر رضی اللہ عنہما کی حدیث کا حوالہ دیتے ہیں۔ لیکن محدثین اور کتبِ آثار سے ثابت ہے کہ حضرت ابن عمر خود ابتداء کے علاوہ رفع الیدین نہیں کرتے تھے۔</p>
+        </section>
+
+        <section id="chap5" class="card">
+            <h2>باب پنجم: بخاری شریف اور رفع الیدین</h2>
+            <p>بخاری شریف میں رفع الیدین کے حوالے سے جو روایات موجود ہیں ان کی اسنادی حیثیت اور محدثین کی تشریحات کو اس باب میں تفصیل سے بیان کیا گیا ہے۔</p>
+        </section>
+
+        <section id="fatwa" class="card fatwa">
+            <h2>دار الافتاء اہلسنت کا فتویٰ</h2>
+            <p><strong>سوال:</strong> بعض لوگ نماز میں تکبیر کہتے ہوئے اور رکوع میں جاتے اور اٹھتے وقت ہاتھ اٹھاتے ہیں، کیا یہ درست ہے؟</p>
+            <p><strong>جواب:</strong> نماز میں احناف کے نزدیک حکم یہ ہے کہ نماز میں صرف تکبیر تحریمہ میں ہاتھوں کو اٹھایا جائے گا اور اس کے علاوہ رکوع میں جاتے اور اٹھتے وقت ہاتھوں کو نہیں اٹھایا جائے گا۔</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>تمام حقوق بحق ناشر و مؤلف محفوظ ہیں | مکتبہ الغنی پبلشرز</p>
+        </div>
+    </footer>
+
+</body>
+</html>

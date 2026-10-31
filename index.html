@@ -637,153 +637,88 @@
 
 </body>
 </html>
-<!-- Floating Audio Player Bar -->
-<div id="stickyAudioPlayer" style="
-  position: fixed;
-  bottom: 25px;
-  right: 20px;
-  z-index: 99999;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-  border-radius: 50px;
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  direction: rtl;
-  font-family: system-ui, -apple-system, sans-serif;
-">
-  <!-- پلے / پاز کا بٹن -->
-  <button id="togglePlayBtn" title="رسالہ سنیں" style="
-    background: #0b6623;
-    color: white;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(11, 102, 35, 0.35);
-    transition: transform 0.2s, background-color 0.2s;
-  ">
-    ▶
-  </button>
-
-  <!-- روکو بٹن -->
-  <button id="resetAudioBtn" title="بند کریں" style="
-    background: #f1f3f4;
-    color: #444;
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    transition: background-color 0.2s;
-  ">
-    ⏹
-  </button>
-
-  <!-- ٹیکسٹ / اسٹیٹس -->
-  <span id="audioStatusText" style="
-    font-size: 14px;
-    font-weight: 600;
-    color: #202124;
-    padding-left: 6px;
-    user-select: none;
-  ">
-    رسالہ سنیں
-  </span>
-</div>
+<!-- لائن ہائی لائٹ کرنے کے لیے سادہ اسٹائل -->
+<style>
+  .reading-active {
+    background-color: #ffeaa7 !important;
+    color: #000 !important;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+</style>
 
 <script>
-  const toggleBtn = document.getElementById('togglePlayBtn');
-  const resetBtn = document.getElementById('resetAudioBtn');
-  const statusText = document.getElementById('audioStatusText');
+  const synth = window.speechSynthesis;
+  let activeElement = null;
 
-  let synth = window.speechSynthesis;
-  let utterance = null;
-  let isPlaying = false;
+  // بہترین دستیاب آواز چننا
+  function getBestVoice() {
+    const voices = synth.getVoices();
+    return voices.find(v => v.lang.startsWith('ur')) || 
+           voices.find(v => v.lang.startsWith('hi')) || 
+           null;
+  }
 
-  if ('speechSynthesis' in window) {
-    function startReading() {
+  // بولنے کا عمل روکنا اور ہائی لائٹ ختم کرنا
+  function stopSpeaking() {
+    if (synth.speaking || synth.pending) {
       synth.cancel();
+    }
+    if (activeElement) {
+      activeElement.classList.remove('reading-active');
+      activeElement = null;
+    }
+  }
 
-      // صفحے سے تمام پڑھنے لائق تحریر جمع کرنا
-      const content = document.body.innerText;
-      utterance = new SpeechSynthesisUtterance(content);
+  // پورے صفحے پر کلک کو سننا
+  document.addEventListener('click', function (e) {
+    // صرف تحریری ٹیگز (پیراگراف، ہیڈنگز، لسٹ وغیرہ) کو منتخب کریں
+    const target = e.target.closest('p, h1, h2, h3, h4, h5, h6, li, span, div');
+
+    if (!target) return;
+
+    // اگر یوزر نے اسی لائن پر دوبارہ کلک کیا تو آواز بند کر دیں
+    if (activeElement === target && synth.speaking) {
+      stopSpeaking();
+      return;
+    }
+
+    const text = target.innerText ? target.innerText.trim() : '';
+
+    // اگر تحریر موجود ہو تو اسے پڑھیں
+    if (text.length > 0 && text.length < 1000) {
+      stopSpeaking();
+
+      const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'ur-PK';
-      utterance.rate = 0.9;
+      utterance.rate = 0.85;
 
-      // مختلف موبائل براؤزرز کے لیے اردو آواز کا انتخاب
-      let voices = synth.getVoices();
-      let urduVoice = voices.find(v => v.lang.includes('ur') || v.name.toLowerCase().includes('urdu'));
-      if (urduVoice) utterance.voice = urduVoice;
+      const voice = getBestVoice();
+      if (voice) utterance.voice = voice;
 
-      utterance.onend = () => {
-        isPlaying = false;
-        toggleBtn.innerHTML = '▶';
-        toggleBtn.style.background = '#0b6623';
-        statusText.innerText = 'رسالہ سنیں';
+      // لائن کو نمایاں کریں
+      target.classList.add('reading-active');
+      activeElement = target;
+
+      utterance.onend = function () {
+        target.classList.remove('reading-active');
+        activeElement = null;
       };
 
-      utterance.onerror = () => {
-        isPlaying = false;
-        toggleBtn.innerHTML = '▶';
-        statusText.innerText = 'رسالہ سنیں';
+      utterance.onerror = function () {
+        target.classList.remove('reading-active');
+        activeElement = null;
       };
 
       synth.speak(utterance);
-      isPlaying = true;
-      toggleBtn.innerHTML = '⏸';
-      toggleBtn.style.background = '#e67e22';
-      statusText.innerText = 'جاری ہے...';
     }
+  });
 
-    toggleBtn.addEventListener('click', () => {
-      if (!isPlaying) {
-        if (synth.paused) {
-          synth.resume();
-          isPlaying = true;
-          toggleBtn.innerHTML = '⏸';
-          toggleBtn.style.background = '#e67e22';
-          statusText.innerText = 'جاری ہے...';
-        } else {
-          startReading();
-        }
-      } else {
-        synth.pause();
-        isPlaying = false;
-        toggleBtn.innerHTML = '▶';
-        toggleBtn.style.background = '#0b6623';
-        statusText.innerText = 'روکا ہوا ہے';
-      }
-    });
-
-    resetBtn.addEventListener('click', () => {
-      synth.cancel();
-      isPlaying = false;
-      toggleBtn.innerHTML = '▶';
-      toggleBtn.style.background = '#0b6623';
-      statusText.innerText = 'رسالہ سنیں';
-    });
-
-    // کچھ براؤزرز میں آوازیں لوڈ ہونے میں وقت لیتی ہیں
+  // آوازیں لوڈ ہونے کا انتظار
+  if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = () => {
       synth.getVoices();
     };
-
-  } else {
-    document.getElementById('stickyAudioPlayer').style.display = 'none';
   }
 </script>
-
 

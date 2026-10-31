@@ -690,9 +690,17 @@
       stopSpeaking();
 
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ur-PK';
-      utterance.rate = 0.75;
+            const hasArabic = /[\u064B-\u065F\u0670]/.test(text);
+      if (hasArabic) {
+        utterance.lang = 'ar-SA';
+        utterance.rate = 0.75;
         utterance.pitch = 0.6;
+      } else {
+        utterance.lang = 'ur-PK';
+        utterance.rate = 0.75;
+        utterance.pitch = 0.6;
+      }
+        
         
 
       const voice = getBestVoice();

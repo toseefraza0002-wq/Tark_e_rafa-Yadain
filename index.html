@@ -632,6 +632,20 @@ box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 50px rgba(0, 0, 0, 0.45);
             <div class="page-badge-footer">صفحہ 39 (اختتام)</div>
         </div>
     </div>
+    <!-- اسکرین کے اوپر چلنے والی باریک لائن -->
+<div id="readProgress" style="position: fixed; top: 0; left: 0; height: 3.5px; background: linear-gradient(90deg, #d4af37, #f9e076); width: 0%; z-index: 999999; box-shadow: 0 1px 6px rgba(212, 175, 55, 0.8);"></div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (totalHeight > 0) {
+      const progressPercent = (currentScroll / totalHeight) * 100;
+      document.getElementById('readProgress').style.width = progressPercent + '%';
+    }
+  });
+</script>
+    
 
 </div>
 

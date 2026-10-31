@@ -653,5 +653,22 @@ box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 50px rgba(0, 0, 0, 0.45);
     <p>تمام حقوق بحقِ ناشر و مؤلف محفوظ ہیں | مکتبہ الغنی پبلشرز</p>
 </footer>
 
+    <!-- اوپر جانے کا بٹن -->
+<button id="backToTop" style="display:none; position:fixed; bottom:25px; right:20px; width:45px; height:45px; border-radius:50%; background:#d4af37; color:#062b16; border:none; font-size:22px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:9999;">↑</button>
+
+<script>
+  const topBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+  topBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+    
 </body>
 </html>
